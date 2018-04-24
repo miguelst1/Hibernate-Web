@@ -25,7 +25,12 @@ public class PersonasManagedBean implements Serializable {
 		this.personas = RepositorioPersona.consultar("", "", "", null, "");
 	}
 
+	public void eliminar(Persona persona) {
+		RepositorioPersona.eliminarPersona(persona.getIdUsuario());
+	}
+
 	public List<Persona> getPersonas() {
 		return personas;
 	}
+
 }

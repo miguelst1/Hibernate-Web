@@ -11,41 +11,40 @@
 <h:body>
 	<h1>Mantenimiento de personas</h1>
 	
-	<h:dataTable var="persona" value="#{personasManagedBean.personas}" border="1">
-		<f:facet name="caption">
-			Mantenimiento Personas
-		</f:facet>
-		
-		<h:column>
-			<f:facet name="header">
-				Nombre
+	<h:form>
+		<h:dataTable var="persona" value="#{personasManagedBean.personas}" border="1">
+			<f:facet name="caption">
+				Mantenimiento Personas
 			</f:facet>
-			#{persona.nombre}
-		</h:column>
-		<h:column>
-			<f:facet name="header">
-				Apellidos
-			</f:facet>
-			#{persona.apellidos}
-		</h:column>
-		<h:column>
-			<f:facet name="header">
-				DNI
-			</f:facet>
-			#{persona.dni}
-		</h:column>
-		<h:column>
-			<f:facet name="header">
-				Acciones
-			</f:facet>
-			<h:form>
-				<h:commandButton value="Editar"/>
-			</h:form>
-			<h:form>
-				<h:commandButton value="Eliminar"/>
-			</h:form>
-		</h:column>
-	</h:dataTable>
+			
+			<h:column>
+				<f:facet name="header">
+					Nombre
+				</f:facet>
+				#{persona.nombre}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Apellidos
+				</f:facet>
+				#{persona.apellidos}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					DNI
+				</f:facet>
+				#{persona.dni}
+			</h:column>
+			<h:column>
+				<f:facet name="header">
+					Acciones
+				</f:facet>
+				
+				<h:commandButton value="Editar"/>	
+				<h:commandButton value="Eliminar" actionListener="#{personasManagedBean.eliminar(persona)}"/>	
+			</h:column>
+		</h:dataTable>
+	</h:form>
 	
 	<br/>
 	
